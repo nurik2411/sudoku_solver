@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\NurulloAlijonov\\source\\repos\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {}
+    "C:\\Users\\NurulloAlijonov\\Desktop\\sudoku\\sudoku_solver\\ConsoleApp1\\ConsoleApp1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\NurulloAlijonov\\source\\repos\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj": {
+    "C:\\Users\\NurulloAlijonov\\Desktop\\sudoku\\sudoku_solver\\ConsoleApp1\\ConsoleApp1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\NurulloAlijonov\\source\\repos\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectUniqueName": "C:\\Users\\NurulloAlijonov\\Desktop\\sudoku\\sudoku_solver\\ConsoleApp1\\ConsoleApp1.csproj",
         "projectName": "ConsoleApp1",
-        "projectPath": "C:\\Users\\NurulloAlijonov\\source\\repos\\ConsoleApp1\\ConsoleApp1\\ConsoleApp1.csproj",
+        "projectPath": "C:\\Users\\NurulloAlijonov\\Desktop\\sudoku\\sudoku_solver\\ConsoleApp1\\ConsoleApp1.csproj",
         "packagesPath": "C:\\Users\\NurulloAlijonov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\NurulloAlijonov\\source\\repos\\ConsoleApp1\\ConsoleApp1\\obj\\",
+        "outputPath": "C:\\Users\\NurulloAlijonov\\Desktop\\sudoku\\sudoku_solver\\ConsoleApp1\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
