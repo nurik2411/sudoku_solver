@@ -1,42 +1,48 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ConsoleApp1
 {
     class Program
     {
+        public static char[,] board = new char[,]{
+                {'0','0','0','7','0','0','3','0','1'},
+                {'3','0','0','9','0','0','0','0','0'},
+                {'0','4','0','3','1','0','2','0','0'},
+                {'0','6','0','4','0','0','5','0','0'},
+                {'0','0','0','0','0','0','0','0','0'},
+                {'0','0','1','0','0','8','0','4','0'},
+                {'0','0','6','0','2','1','0','5','0'},
+                {'0','0','0','0','0','9','0','0','8'},
+                {'8','0','5','0','0','4','0','0','0'}};
         public static bool SudokuSolve(char[,] board)
         {
-            // your code goes here
             if (board == null || board.GetLength(0) < 9 || board.GetLength(1) < 9)
             {
                 return false;
             }
-
-            // assume that 9 * 9
             return SudokuSolveHelper(board, 0, 0);
         }
 
         private static bool SudokuSolveHelper(char[,] board, int row, int col)
         {
-            // base case
             if (row > 8)
             {
                 return true;
             }
 
             var visit = board[row, col];
-            var isDot = visit == '.';
+            var isBlank = visit == '0';
 
             var nextRow = col == 8 ? (row + 1) : row;
             var nextCol = col == 8 ? 0 : (col + 1);
 
-            if (!isDot)
+            if (!isBlank)
             {
                 return SudokuSolveHelper(board, nextRow, nextCol);
             }
 
-            // assume that it is digit number 
             var availableNumbers = getAvailableNumbers(board, row, col);
 
             foreach (var option in availableNumbers)
@@ -50,7 +56,7 @@ namespace ConsoleApp1
                     return true;
                 }
 
-                board[row, col] = '.';
+                board[row, col] = '0';
             }
 
             return false;
@@ -65,7 +71,7 @@ namespace ConsoleApp1
             for (int col = 0; col < 9; col++)
             {
                 var visit = board[currentRow, col];
-                var isDigit = visit != '.';
+                var isDigit = visit != '0';
 
                 if (isDigit)
                 {
@@ -77,7 +83,7 @@ namespace ConsoleApp1
             for (int row = 0; row < 9; row++)
             {
                 var visit = board[row, currentCol];
-                var isDigit = visit != '.';
+                var isDigit = visit != '0';
 
                 if (isDigit)
                 {
@@ -93,7 +99,7 @@ namespace ConsoleApp1
                 for (int col = startCol; col < startCol + 3; col++)
                 {
                     var visit = board[row, col];
-                    var isDigit = visit != '.';
+                    var isDigit = visit != '0';
 
                     if (isDigit)
                     {
@@ -106,7 +112,7 @@ namespace ConsoleApp1
         }
         static void Main(string[] args)
         {
-            var board = new char[,]{
+            var board2 = new char[,]{
                 {'.','.','.','7','.','.','3','.','1'},
                 {'3','.','.','9','.','.','.','.','.'},
                 {'.','4','.','3','1','.','2','.','.'},
@@ -117,7 +123,22 @@ namespace ConsoleApp1
                 {'.','.','.','.','.','9','.','.','8'},
                 {'8','.','5','.','.','4','.','.','.'}};
 
+            string sudoku = "";
+
             Console.WriteLine(SudokuSolve(board));
+            for(int i = 0; i<9; i++)
+            {
+                for(int j = 0; j<9; j++)
+                {
+                    sudoku += board[i, j].ToString() + " ";
+                    if (j == 8)
+                    {
+                        sudoku += "\n";
+                    }
+                }
+            }
+            Console.WriteLine(sudoku);
+
         }
     }
 }
